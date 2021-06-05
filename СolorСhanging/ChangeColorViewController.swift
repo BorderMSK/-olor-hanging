@@ -43,6 +43,10 @@ class ChangeColorViewController: UIViewController{
         addDoneButton(redTextField)
         addDoneButton(greenTextField)
         addDoneButton(blueTextField)
+        
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
     }
     
     @IBAction func actionSlider(_ sender: UISlider) {
@@ -112,28 +116,19 @@ extension ChangeColorViewController: UITextFieldDelegate{
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        guard let text = textField.text else { return }
-        
-        if let currentValue = Float(text) {
-            
-            switch textField.tag {
-            case 0: redSlider.value = currentValue
-            case 1: greenSlider.value = currentValue
-            case 2: blueSlider.value = currentValue
-            default: break
-            }
-            setColor()
-            setValueLabel()
-        } else {
-            showAlert(title: "Wrong format!", message: "Please enter correct value")
-        }
+        redSlider.value = Float(redTextField.text ?? "0")!
+        greenSlider.value = Float(greenTextField.text ?? "0")!
+        blueSlider.value = Float(blueTextField.text ?? "0")!
+        redValueLabel.text = redTextField.text
+        greenValueLabel.text = greenTextField.text
+        blueValueLabel.text = blueTextField.text
     }
+
 }
 extension ChangeColorViewController{
     private func addDoneButton(_ textField: UITextField){
-    let numberToolbar = UIToolbar()
-    textField.inputAccessoryView = numberToolbar
+        let numberToolbar = UIToolbar()
+        textField.inputAccessoryView = numberToolbar
         numberToolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDone))
@@ -141,13 +136,8 @@ extension ChangeColorViewController{
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         numberToolbar.items = [flexBarButton, doneButton]
-}
+    }
     @objc private func didTapDone(){
         view.endEditing(true)
-    }
-    private func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Да", style: .cancel, handler: nil))
-        present(alert, animated: true)
     }
 }
