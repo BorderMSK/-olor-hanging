@@ -50,7 +50,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneAction:" destination="bTd-4o-mnS" eventType="touchUpInside" id="OZn-hD-BoX"/>
+                                    <action selector="doneAction:" destination="bTd-4o-mnS" eventType="touchUpInside" id="Swu-lp-scK"/>
+                                    <segue destination="Qc0-RS-04B" kind="unwind" unwindAction="unwindFor:" id="gzI-js-nPx"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-Xm-f7p">
@@ -115,20 +116,20 @@
                                                 <rect key="frame" x="-2" y="0.0" width="198" height="33"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <connections>
-                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="kqG-rY-8Jc"/>
+                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="WGF-k2-USp"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-eS-jJ3">
                                                 <rect key="frame" x="-2" y="41" width="198" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
-                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="Ivw-vA-rOd"/>
+                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="eLS-mJ-dlx"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="t2W-t8-Bq7">
                                                 <rect key="frame" x="-2" y="80" width="198" height="31"/>
                                                 <connections>
-                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="18E-8v-X0G"/>
+                                                    <action selector="actionSlider:" destination="bTd-4o-mnS" eventType="valueChanged" id="1KJ-c9-koX"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -143,25 +144,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="50.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                <connections>
-                                                    <action selector="redTextFieldAction:" destination="bTd-4o-mnS" eventType="editingChanged" id="SzN-uF-Aor"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-Oj-XtR">
                                                 <rect key="frame" x="0.0" y="38" width="50.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                <connections>
-                                                    <action selector="greenTextFieldAction:" destination="bTd-4o-mnS" eventType="editingChanged" id="wjC-PB-8aK"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6IJ-dS-OfJ">
                                                 <rect key="frame" x="0.0" y="76" width="50.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                <connections>
-                                                    <action selector="blueTextFieldAction:" destination="bTd-4o-mnS" eventType="editingChanged" id="peh-m0-XIh"/>
-                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -197,7 +189,6 @@
                         <outlet property="blueSlider" destination="t2W-t8-Bq7" id="V6V-pf-03J"/>
                         <outlet property="blueTextField" destination="6IJ-dS-OfJ" id="3Wz-zR-6gm"/>
                         <outlet property="blueValueLabel" destination="eg9-dg-sYd" id="43R-NT-Q3l"/>
-                        <outlet property="doneButton" destination="kLL-US-UsI" id="I5P-Sj-ePf"/>
                         <outlet property="greenSlider" destination="Sby-eS-jJ3" id="8RF-eG-fcv"/>
                         <outlet property="greenTextField" destination="2Ds-Oj-XtR" id="Vxj-oO-g9o"/>
                         <outlet property="greenValueLabel" destination="Re3-kx-n7O" id="7sU-yT-r0K"/>
@@ -208,6 +199,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuO-X9-KmJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Qc0-RS-04B" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2510" y="78"/>
         </scene>

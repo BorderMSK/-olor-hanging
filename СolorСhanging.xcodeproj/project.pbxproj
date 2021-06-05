@@ -14,6 +14,7 @@
 		BC9DF12E266A600E00D4E276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC9DF12D266A600E00D4E276 /* Assets.xcassets */; };
 		BC9DF131266A600E00D4E276 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9DF12F266A600E00D4E276 /* LaunchScreen.storyboard */; };
 		BC9DF139266A639500D4E276 /* ChangeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF138266A639500D4E276 /* ChangeColorViewController.swift */; };
+		BC9DF13B266BB38800D4E276 /* ColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF13A266BB38800D4E276 /* ColorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BC9DF130266A600E00D4E276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC9DF132266A600E00D4E276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC9DF138266A639500D4E276 /* ChangeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorViewController.swift; sourceTree = "<group>"; };
+		BC9DF13A266BB38800D4E276 /* ColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BC9DF126266A600B00D4E276 /* SceneDelegate.swift */,
 				BC9DF128266A600B00D4E276 /* ColorViewController.swift */,
 				BC9DF138266A639500D4E276 /* ChangeColorViewController.swift */,
+				BC9DF13A266BB38800D4E276 /* ColorDelegate.swift */,
 				BC9DF12A266A600B00D4E276 /* Main.storyboard */,
 				BC9DF12D266A600E00D4E276 /* Assets.xcassets */,
 				BC9DF12F266A600E00D4E276 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9DF13B266BB38800D4E276 /* ColorDelegate.swift in Sources */,
 				BC9DF129266A600B00D4E276 /* ColorViewController.swift in Sources */,
 				BC9DF125266A600B00D4E276 /* AppDelegate.swift in Sources */,
 				BC9DF139266A639500D4E276 /* ChangeColorViewController.swift in Sources */,
