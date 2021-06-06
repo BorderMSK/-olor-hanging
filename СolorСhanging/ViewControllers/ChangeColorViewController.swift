@@ -52,18 +52,42 @@ class ChangeColorViewController: UIViewController{
     @IBAction func actionSlider(_ sender: UISlider) {
         switch sender {
         case redSlider:
-            redValueLabel.text = mackValue(from: sender)
-            redTextField.text = mackValue(from: sender)
+            redValueLabel.text = maskValue(from: sender)
+            redTextField.text = maskValue(from: sender)
         case greenSlider:
-            greenValueLabel.text = mackValue(from: sender)
-            greenTextField.text = mackValue(from: sender)
+            greenValueLabel.text = maskValue(from: sender)
+            greenTextField.text = maskValue(from: sender)
         case blueSlider:
-            blueValueLabel.text = mackValue(from: sender)
-            blueTextField.text = mackValue(from: sender)
+            blueValueLabel.text = maskValue(from: sender)
+            blueTextField.text = maskValue(from: sender)
         default:
             break
         }
         setColor()
+    }
+    
+    private func setValueLabel() {
+        redValueLabel.text = maskValue(from: redSlider)
+        greenValueLabel.text = maskValue(from: greenSlider)
+        blueValueLabel.text = maskValue(from: blueSlider)
+    }
+    
+    private func setValueTextField() {
+        redTextField.text = maskValue(from: redSlider)
+        greenTextField.text = maskValue(from: greenSlider)
+        blueTextField.text = maskValue(from: blueSlider)
+    }
+    
+    private func setValueSlider(){
+        let colorForSlider = CIColor(color: colorViewController)
+        
+        redSlider.value = Float(colorForSlider.red)
+        greenSlider.value = Float(colorForSlider.green)
+        blueSlider.value = Float(colorForSlider.blue)
+    }
+    
+    private func maskValue(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
     
     func setColor(){
@@ -75,30 +99,6 @@ class ChangeColorViewController: UIViewController{
         
         mixColor.backgroundColor = newColor
         delegate?.setColor(newColor)
-    }
-    
-    private func setValueLabel() {
-        redValueLabel.text = mackValue(from: redSlider)
-        greenValueLabel.text = mackValue(from: greenSlider)
-        blueValueLabel.text = mackValue(from: blueSlider)
-    }
-    
-    private func setValueTextField() {
-        redTextField.text = mackValue(from: redSlider)
-        greenTextField.text = mackValue(from: greenSlider)
-        blueTextField.text = mackValue(from: blueSlider)
-    }
-    
-    private func setValueSlider(){
-        let colorForSlider = CIColor(color: colorViewController)
-        
-        redSlider.value = Float(colorForSlider.red)
-        greenSlider.value = Float(colorForSlider.green)
-        blueSlider.value = Float(colorForSlider.blue)
-    }
-    
-    private func mackValue(from slider: UISlider) -> String {
-        String(format: "%.2f", slider.value)
     }
     
     @IBAction func doneAction(_ sender: Any) {
@@ -115,6 +115,7 @@ extension ChangeColorViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         redSlider.value = Float(redTextField.text ?? "0")!
         greenSlider.value = Float(greenTextField.text ?? "0")!
@@ -123,7 +124,6 @@ extension ChangeColorViewController: UITextFieldDelegate{
         greenValueLabel.text = greenTextField.text
         blueValueLabel.text = blueTextField.text
     }
-
 }
 extension ChangeColorViewController{
     private func addDoneButton(_ textField: UITextField){

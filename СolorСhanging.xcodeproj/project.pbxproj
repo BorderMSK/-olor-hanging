@@ -60,17 +60,41 @@
 		BC9DF123266A600B00D4E276 /* СolorСhanging */ = {
 			isa = PBXGroup;
 			children = (
-				BC9DF124266A600B00D4E276 /* AppDelegate.swift */,
-				BC9DF126266A600B00D4E276 /* SceneDelegate.swift */,
-				BC9DF128266A600B00D4E276 /* ColorViewController.swift */,
-				BC9DF138266A639500D4E276 /* ChangeColorViewController.swift */,
-				BC9DF13A266BB38800D4E276 /* ColorDelegate.swift */,
-				BC9DF12A266A600B00D4E276 /* Main.storyboard */,
+				BC9DF13F266D3DBA00D4E276 /* SupportingFiles */,
+				BC9DF13E266C3B1800D4E276 /* Storyboards */,
+				BC9DF13C266C3ADD00D4E276 /* ViewControllers */,
 				BC9DF12D266A600E00D4E276 /* Assets.xcassets */,
-				BC9DF12F266A600E00D4E276 /* LaunchScreen.storyboard */,
 				BC9DF132266A600E00D4E276 /* Info.plist */,
 			);
 			path = "СolorСhanging";
+			sourceTree = "<group>";
+		};
+		BC9DF13C266C3ADD00D4E276 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DF128266A600B00D4E276 /* ColorViewController.swift */,
+				BC9DF138266A639500D4E276 /* ChangeColorViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BC9DF13E266C3B1800D4E276 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DF12A266A600B00D4E276 /* Main.storyboard */,
+				BC9DF12F266A600E00D4E276 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BC9DF13F266D3DBA00D4E276 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DF124266A600B00D4E276 /* AppDelegate.swift */,
+				BC9DF13A266BB38800D4E276 /* ColorDelegate.swift */,
+				BC9DF126266A600B00D4E276 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
